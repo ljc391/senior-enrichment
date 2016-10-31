@@ -1,11 +1,19 @@
 import { combineReducers } from 'redux'
-
-const initialState = {}
+const  RECIEVE_POSTS='RECIEVE_POSTS';
+const initialState = {posts:[] };
 
 const rootReducer = function(state = initialState, action) {
+
+        console.log("hrere~~~~~", typeof RECIEVE_POSTS);
   switch(action.type) {
-    default: return state
+    case RECIEVE_POSTS:{
+
+        console.log("hrere");
+        return Object.assign({}, state, {posts: action.posts});
+
+    }
+    default:{ console.log("defaule"); return state;}
   }
 };
 
-export default rootReducer
+export default rootReducer;
